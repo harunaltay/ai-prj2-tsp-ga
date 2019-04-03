@@ -1,11 +1,19 @@
+"""
+a gene is a city in the route
+"""
+
 import math
 
 
 class City:
     def __init__(self, index, x, y):
         self.index = index
-        self.x = x
-        self.y = y
+        self.x = float(x)
+        self.y = float(y)
+
+    def deep_copy(self):
+        city_copy = City(self.index, str(self.x), str(self.y))
+        return city_copy
 
     def measure_distance(self, city):
         delta_x = self.x - city.x
